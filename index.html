@@ -689,7 +689,7 @@ function setupCommandWindow(actor) {
     
     // ボタンのテキスト設定
     if (actor.id === 'hero') btnSkill.innerText = '全力斬り(MP10)';
-    else if (actor.id === 'knight') btnSkill.innerText = 'かばう';
+    else if (actor.id === 'knight') btnSkill.innerText = 'ぼうぎょ';
     else if (actor.id === 'mage') btnSkill.innerText = 'まほう(MP20)';
     else if (actor.id === 'healer') btnSkill.innerText = 'かいふく(MP20)';
 
@@ -753,7 +753,7 @@ document.getElementById('cmd-skill').addEventListener('click', () => {
             nextTurn();
         });
     } else if (actor.id === 'knight') {
-        showMessage(`${actor.name} は みがまえを とった！`, () => {
+        showMessage(`${actor.name} は みがまえを とった！\nつぎの自分の番まで 自分へのダメージを80%へらす。`, () => {
             actor.isDefending = true;
             Sounds.heal();
             spawnParticles(actor.x, actor.y, '#38bdf8', 20, true);
